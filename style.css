@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+/* Farbvariablen */
+:root {
+  --toogle-bg: #a3f4c5;
+  --toogle-slider: #166c47;
+  --background-color: #eaf3ea;
+  --card-color: #ffffff;
+  --primary-color: #a3f4c5;
+  --button-text-color: #0b3e26;
+  --text-color: #272d29;
+  --label-color: #3c413d;
+  --input-color: #edf2ec;
+  --button-background-hover: #92dcb0;
+  --button-text-hover: #002112;
+}
+
+.dark {
+  --toogle-bg: #324c3e;
+  --toogle-slider: #87d7ab;
+  --background-color: #101814;
+  --card-color: #26342c;
+  --primary-color: #324c3e;
+  --button-text-color: #a2f4c7;
+  --text-color: #c0c9c1;
+  --label-color: #b2bbb4;
+  --input-color: #0f15128d;
+  --button-background-hover: #566e60;
+  --button-text-hover: #a3f4c5;
+}
+
+/* Der Schalter - das Feld um den Schieberegler */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Standard-HTML-Checkbox ausblenden */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Der Schieberegler */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--toogle-bg);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--toogle-slider);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--toogle-bg);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Abgerundete Schieberegler */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5px;
+}
+
+h1 {
+  color: var(--text-color);
+}
+
+header {
+  gap: 15px;
+  display: flex;
+  align-items: center;
+}
+
+#allPoints,
+#winnerPlace {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 600px;
+}
+
+* {
+  border: none;
+}
+
+#allGameEl {
+  background-color: var(--card-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+}
+
+canvas {
+  background-image: url("assets/field-light.png");
+  border-radius: 0px;
+  overflow: hidden;
+  background-repeat: repeat;
+}
+
+#GameScoresGame {
+  display: ruby-base;
+}
+
+body {
+  background-color: var(--background-color);
+  margin: 0;
+  flex-direction: column;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  height: 34px;
+  border-radius: 200px;
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  font-size: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+h3 {
+  color: var(--text-color);
+}
+
+button:hover, input[type="submit"]:hover  {
+  background-color: var(--button-background-hover);
+  color: var(--button-text-hover);
+}
+
+
+form {
+  background-color: var(--card-color);
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+legend {
+  font-size: 24px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+#label {
+  border-radius: 5px 5px 0 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16px;
+  color: var(--label-color);
+}
+
+input[type="text"] {
+  color: var(--text-color);
+  background-color: var(--input-color);
+  border-radius: 8px 8px 8px 8px;
+  width: 75%;
+  padding: 10px;
+  margin-top: 0;
+  font-size: 16px;
+}
+input[type="text"]:focus {
+  color: var(--text-color);
+  background-color: var(--input-color);
+  border-radius: 8px 8px 8px 8px;
+  width: 75%;
+  padding: 10px;
+  margin-top: 0;
+  font-size: 16px;
+  outline: none;
+  box-shadow: var(--primary-color) 0 0 1px;
+}
+
+input[type="submit"] {
+  border-radius: 80px;
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  padding: 7px 14px;
+  font-size: 16px;
+  cursor: pointer;
+}

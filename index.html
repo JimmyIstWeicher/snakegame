@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/vnd.icon" href="assets/favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+    <link rel="manifest" href="manifest/manifest.json" />
+  </head>
+
+  <body id="surface">
+    <form id="signIn" onsubmit="signIn(document.getElementById('fname').value)">
+      <fieldset>
+        <legend><h1>Willkommen</h1></legend>
+        <label id="label" for="fname">Nikname:</label>
+        <input
+          minlength="2"
+          maxlength="7"
+          required="true"
+          type="text"
+          id="fname"
+          name="fname"
+        /><br />
+        <input type="submit" value="Absenden" />
+      </fieldset>
+    </form>
+    <div id="gameScreen">
+      <header>
+        <h1>Snake</h1>
+        <button id="start" onclick="start()">start</button
+        ><button
+          class="button"
+          onclick='localStorage.removeItem("nikname"); location.reload()'
+        >
+          <span class="material-symbols-outlined"> edit</span>
+          <span id="userName">name</span>
+        </button>
+        <label class="switch">
+          <input id="toggleswitch" type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </header>
+
+      <div id="allGameEl">
+        <div id="allPoints">
+          <h3 id="points1">Punkte:</h3>
+          <h3 id="highscore">Highscore:</h3>
+          <h3 id="points2">Punkte:</h3>
+        </div>
+        <canvas height="600" width="600" id="canvas"></canvas>
+        <div id="winnerPlace">
+          <h3 id="winner">Gewinner</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="client.js"></script>
+</html>
