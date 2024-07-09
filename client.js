@@ -1,4 +1,4 @@
-const webSocket = new WebSocket("ws://localhost:8080/");
+const webSocket = new WebSocket("ws://192.168.2.113:8080/");
 const serverAdress = "wss://snake-sj48.onrender.com/";
 let key;
 //const webSocket = new WebSocket(serverAdress);
